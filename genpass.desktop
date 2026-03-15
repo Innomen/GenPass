@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=GenPass
+Comment=Universal Password Generator
+Exec=python3 "/home/innomen/-=Original=-/Folders/Apps/GenPass/password_generator.py"
+Type=Application
+Terminal=true
+Icon=dialog-password
+Categories=Utility;Security;
+Keywords=password;generator;security;clipboard;
+Name[en_US]=GenPass
