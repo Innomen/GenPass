@@ -4,8 +4,7 @@ Universal Password Generator - generates passwords that satisfy all the bullshit
 Now with clipboard support!
 """
 
-import random
-import string
+import secrets
 import sys
 import subprocess
 import platform
@@ -51,21 +50,25 @@ def generate_password(length=16):
     # Stick to common symbols that most systems accept
     symbols = "!@#$%^&*"
 
-    # Ensure we have at least one of each required type
+    # Ensure we have at least one of each required type.
+    # secrets.choice uses the OS cryptographic RNG (safe for passwords).
     password = [
-        random.choice(uppercase),    # At least one uppercase
-        random.choice(lowercase),    # At least one lowercase
-        random.choice(numbers),      # At least one number
-        random.choice(symbols),      # At least one symbol
+        secrets.choice(uppercase),    # At least one uppercase
+        secrets.choice(lowercase),    # At least one lowercase
+        secrets.choice(numbers),      # At least one number
+        secrets.choice(symbols),      # At least one symbol
     ]
 
     # Fill the rest randomly from all character sets
     all_chars = uppercase + lowercase + numbers + symbols
     for _ in range(length - 4):
-        password.append(random.choice(all_chars))
+        password.append(secrets.choice(all_chars))
 
-    # Shuffle so the required chars aren't always at the start
-    random.shuffle(password)
+    # Shuffle so the required chars aren't always at the start.
+    # Fisher-Yates using secrets.randbelow (secrets has no shuffle()).
+    for i in range(len(password) - 1, 0, -1):
+        j = secrets.randbelow(i + 1)
+        password[i], password[j] = password[j], password[i]
 
     return ''.join(password)
 
