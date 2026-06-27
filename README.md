@@ -14,15 +14,24 @@ A simple, universal password generator that creates passwords satisfying all com
 ## Installation
 
 ```bash
-# Clone or copy the repository
-cd ~/Folders/EMS/My Work/Apps/GenPass
+# Clone the repository
+git clone https://github.com/Innomen/GenPass.git
+cd GenPass
 
-# Make sure the script is executable
-chmod +x password_generator.py
+# Run the installer (no root needed; installs for the current user)
+./install.sh
+```
 
-# Optional: Add to your PATH for command-line usage
-# Add this to your shell config (~/.bashrc, ~/.zshrc, or ~/.config/fish/config.fish):
-# alias genpass='python3 ~/Folders/EMS/My Work/Apps/GenPass/password_generator.py'
+The installer is self-locating — run it from wherever you cloned the repo. It:
+
+- installs a `genpass` command to `~/.local/bin/` (works in bash/zsh/fish)
+- adds a "GenPass" entry to your application menu
+- warns you if `~/.local/bin` isn't on your `PATH`, or if no clipboard tool is installed
+
+To remove everything it added:
+
+```bash
+./uninstall.sh
 ```
 
 ## Usage
