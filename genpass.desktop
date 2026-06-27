@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=GenPass
 Comment=Universal Password Generator
-Exec=python3 "/home/innomen/-=Original=-/Folders/Apps/GenPass/password_generator.py"
+Exec=python3 "/home/innomen/-=Original=-/Folders/EMS/My Work/Apps/GenPass/password_generator.py"
 Type=Application
 Terminal=true
 Icon=dialog-password

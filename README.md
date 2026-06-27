@@ -15,14 +15,14 @@ A simple, universal password generator that creates passwords satisfying all com
 
 ```bash
 # Clone or copy the repository
-cd ~/Folders/Apps/GenPass
+cd ~/Folders/EMS/My Work/Apps/GenPass
 
 # Make sure the script is executable
 chmod +x password_generator.py
 
 # Optional: Add to your PATH for command-line usage
 # Add this to your shell config (~/.bashrc, ~/.zshrc, or ~/.config/fish/config.fish):
-# alias genpass='python3 ~/Folders/Apps/GenPass/password_generator.py'
+# alias genpass='python3 ~/Folders/EMS/My Work/Apps/GenPass/password_generator.py'
 ```
 
 ## Usage
